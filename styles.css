@@ -138,23 +138,13 @@ body {
     border: 3px solid rgb(255, 255, 255);
 }
 
-#service-code {
-    background: #141414;
-    color: grey;
-    border: 1px solid grey;
-    font-size: 13px;
-    padding: .5em;
-    height: 35px;
-    margin-left: 12px;
-}
-
-
-#service-code:hover {
-    background: rgb(71, 71, 71);
-    color: white;
-}
 
 
 .color-p-in-col {
     color: grey;
+}
+
+.footerContainer {
+
+    text-align: left;
 }
