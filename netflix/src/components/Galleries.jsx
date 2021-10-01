@@ -52,22 +52,23 @@ class Galleries extends Component {
     componentDidMount = async () => {
         this.fetchMovies()
         console.log("this.state.movies.movies.Search")
-        console.log(this.state.movies.movies.Search)
+
     }
 
     render() {
         return (
 
-            <Row>
+
+            <Row className="mx-n1">
                 {
                     this.state.movies.movies.map(m => (
-                        <Col xs={6} md={4} lg={3}>
+                        <Col xs={4} md={2} lg={2} className="px-1 py-2">
 
-                            < Card style={{ width: '18rem' }} Key={m.imdbID}>
+                            < Card style={{ width: '18rem' }} Key={m.imdbID} className="img-fluid">
                                 <Card.Img variant="top" src={m.Poster} />
-                                <Card.Body>
+                                {/* <Card.Body>
                                     <Card.Title>{m.Title}</Card.Title>
-                                </Card.Body>
+                                </Card.Body> */}
                             </Card >
 
                         </Col>

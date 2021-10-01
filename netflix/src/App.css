@@ -36,3 +36,12 @@ body{
 }
 
 /* end of footer css */
+
+
+/* Galleri Styling */
+
+.card-img-gallery {
+            height: 150px !important;
+            width: 300px;
+            object-fit: cover;
+        }
