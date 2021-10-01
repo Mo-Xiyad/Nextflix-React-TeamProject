@@ -1,23 +1,26 @@
 import { Component } from 'react'
-import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+
 class Galleries extends Component {
 
     state = {
+        search: '',
         movies: {
             movies: []
         }
     }
 
+
+
     fetchMovies = async () => {
 
 
-        let movie = "superman"
+        // let movie = "superman"
 
-        let url = `http://www.omdbapi.com/?apikey=2470e3c&s=${movie}`
+        let url = `http://www.omdbapi.com/?apikey=2470e3c&s=superman`
         try {
 
             const response = await fetch(url)
@@ -50,7 +53,8 @@ class Galleries extends Component {
 
 
     componentDidMount = async () => {
-        this.fetchMovies()
+        this.fetchMovies()// movie=sdsds
+        // this.fetchMovies(this.props.searchQuery)// movie=sdsds
         console.log("this.state.movies.movies.Search")
 
     }
@@ -58,39 +62,33 @@ class Galleries extends Component {
     render() {
         return (
 
+            <>
 
-            <Row className="mx-n1">
-                {
-                    this.state.movies.movies.map(m => (
-                        <Col xs={4} md={2} lg={2} className="px-1 py-2">
+                <div className="d-flex justify-content-start">
+                    <h3>{this.props.m}</h3>
+                    <h3>{this.props.searchQuery}</h3>
 
-                            < Card style={{ width: '18rem' }} Key={m.imdbID} className="img-fluid">
-                                <Card.Img variant="top" src={m.Poster} />
-                                {/* <Card.Body>
-                                    <Card.Title>{m.Title}</Card.Title>
-                                </Card.Body> */}
-                            </Card >
+                </div>
+                <Row className="mx-n1 my-3">
+                    {
+                        this.state.movies.movies.map(m => (
+                            <Col xs={2} md={2} lg={2} className="px-1 py-2 d-flex ">
 
-                        </Col>
-                    ))
-                }
+                                < Card Key={m.imdbID} className="card-gallery card-text-area">
+                                    <Card.Img variant="top" src={m.Poster} className="card-img-gallery img-fluid w-100" />
+                                    <Card.Body className="scroller">
+                                        <Card.Title><small>{m.Title}</small></Card.Title>
+                                    </Card.Body>
+                                </Card >
 
-            </Row>
+                            </Col>
+                        ))
+                    }
+
+                </Row>
+            </>
         )
     }
 }
 
 export default Galleries
-
-// this.state.movies.movies.Search.map(m => (
-                //     <Col xs={6} md={4} lg={3}>
-
-                //         < Card style={{ width: '18rem' }} Key={m.imdbID}>
-                //             <Card.Img variant="top" src={m.Poster} />
-                //             <Card.Body>
-                //                 <Card.Title>{m.Title}</Card.Title>
-                //             </Card.Body>
-                //         </Card >
-
-                //     </Col>
-    // ))

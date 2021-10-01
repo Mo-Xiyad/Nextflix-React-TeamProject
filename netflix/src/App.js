@@ -12,9 +12,11 @@ function App() {
   return (
     <div className="App">
       <Navbarr />
-      <Container fluid>
-        <Galleries />
-      </Container>
+      {/* <Container fluid className="mb-5 px-5">
+        <Galleries movie="Superman" />
+        <Galleries movie="Star wars" />
+        <Galleries movie="Money heist" />
+      </Container> */}
       <MyFooter />
     </div>
   );
