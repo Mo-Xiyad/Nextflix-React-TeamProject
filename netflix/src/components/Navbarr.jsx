@@ -14,25 +14,14 @@ import {
 
 class Navbarr extends Component {
 
-  state = {
-    search: '',
-  }
-
-
-  searchQuery = (e) => {
-    this.setState({
-      search: e.target.value
-    })
-    console.log(this.state.search)
-  }
 
 
 
 
 
-  componentDidMount = async () => {
-    // this.fetchMovies()
-  }
+
+
+
 
 
   render() {
@@ -74,8 +63,8 @@ class Navbarr extends Component {
               {/* search bar is below */}
               <Form.Group controlId="exampleForm.ControlInput1" className="mr-2 mt-1">
                 <Form.Control type="text" placeholder="Search"
-                  value={this.state.search}
-                  onChange={(e) => this.searchQuery(e)}
+                  value={this.props.value}
+                  onChange={(e) => this.props.onChange(e)}
                 />
               </Form.Group>
 
@@ -103,11 +92,7 @@ class Navbarr extends Component {
             </div>
           </Container>
         </Navbar>
-        <Container fluid className="mb-5 px-5">
-          <Galleries m={this.state.search} searchQuery={this.state.search} />
-          <Galleries m="Star Wars" searchQuery={this.state.search} />
-          <Galleries m="Money Heist" searchQuery={this.state.search} />
-        </Container>
+
       </>
     );
   }

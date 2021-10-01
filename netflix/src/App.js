@@ -6,20 +6,30 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Container from 'react-bootstrap/Container'
 import MyFooter from "./components/MyFooter"
+import Search from "./components/Search"
+import React from "react";
 
 
-function App() {
-  return (
-    <div className="App">
-      <Navbarr />
-      {/* <Container fluid className="mb-5 px-5">
-        <Galleries movie="Superman" />
-        <Galleries movie="Star wars" />
-        <Galleries movie="Money heist" />
-      </Container> */}
-      <MyFooter />
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    query: ""
+  }
+  render() {
+    return (
+      <div className="App">
+        <Navbarr value={this.state.query} onChange={(e) => this.setState({ query: e.target.value })} />
+        <Container fluid className="mb-5 px-5">
+          {this.state.query.length < 3 && <> <Galleries movie="Superman" />
+            <Galleries movie="Star wars" />
+            <Galleries movie="Money heist" /></>}
+        </Container>
+        {this.state.query.length > 3 && <Search query={this.state.query} />}
+
+
+        <MyFooter />
+      </div>
+    );
+  }
 }
 
 

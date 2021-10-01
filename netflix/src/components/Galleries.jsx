@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import Search from "./Search";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
@@ -7,7 +8,7 @@ import Form from 'react-bootstrap/Form'
 class Galleries extends Component {
 
     state = {
-        search: '',
+
         movies: {
             movies: []
         }
@@ -20,7 +21,7 @@ class Galleries extends Component {
 
         // let movie = "superman"
 
-        let url = `http://www.omdbapi.com/?apikey=2470e3c&s=superman`
+        let url = `http://www.omdbapi.com/?apikey=2470e3c&s=${this.props.movie}`
         try {
 
             const response = await fetch(url)
@@ -53,9 +54,9 @@ class Galleries extends Component {
 
 
     componentDidMount = async () => {
-        this.fetchMovies()// movie=sdsds
+        this.fetchMovies()
         // this.fetchMovies(this.props.searchQuery)// movie=sdsds
-        console.log("this.state.movies.movies.Search")
+        // console.log("this.state.movies.movies.Search")
 
     }
 
@@ -64,28 +65,40 @@ class Galleries extends Component {
 
             <>
 
+
+
+
+
                 <div className="d-flex justify-content-start">
-                    <h3>{this.props.m}</h3>
-                    <h3>{this.props.searchQuery}</h3>
-
+                    <h3>{this.props.movie}</h3>
                 </div>
-                <Row className="mx-n1 my-3">
-                    {
-                        this.state.movies.movies.map(m => (
-                            <Col xs={2} md={2} lg={2} className="px-1 py-2 d-flex ">
+                <div className="d-flex justify-content-start">
+                    <Row className="mx-n1 my-3">
+                        {
+                            this.state.movies.movies.map(m => (
+                                <Col xs={2} md={2} lg={2} className="px-1 py-2 d-flex ">
 
-                                < Card Key={m.imdbID} className="card-gallery card-text-area">
-                                    <Card.Img variant="top" src={m.Poster} className="card-img-gallery img-fluid w-100" />
-                                    <Card.Body className="scroller">
-                                        <Card.Title><small>{m.Title}</small></Card.Title>
-                                    </Card.Body>
-                                </Card >
+                                    < Card Key={m.imdbID} className="card-gallery card-text-area">
+                                        <Card.Img variant="top" src={m.Poster} className="card-img-gallery img-fluid w-100" />
+                                        <Card.Body className="scroller">
+                                            <Card.Title><small>{m.Title}</small></Card.Title>
+                                        </Card.Body>
+                                    </Card >
 
-                            </Col>
-                        ))
-                    }
+                                </Col>
+                            ))
+                        }
 
-                </Row>
+                    </Row>
+                </div>
+
+
+
+
+
+
+
+
             </>
         )
     }
