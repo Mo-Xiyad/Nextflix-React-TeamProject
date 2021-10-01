@@ -1,5 +1,5 @@
 import { Component } from 'react'
-
+import Container from 'react-bootstrap/Container'
 class Galleries extends Component {
 
 
@@ -9,7 +9,9 @@ class Galleries extends Component {
 
     render() {
         return (
-            <h1>movies</h1>
+            <Container flued>
+                movies
+            </Container>
         )
     }
 }
