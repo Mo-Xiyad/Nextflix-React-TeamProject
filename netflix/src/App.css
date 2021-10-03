@@ -4,7 +4,6 @@ body {
 }
 
 .App {
-  text-align: center;
   color: white;
 }
 
@@ -42,7 +41,7 @@ body {
 /* Galleri Styling */
 
 .infos-container {
-  width: 221px;
+  width: 100%;
   color: white;
   background: #141414;
   position: absolute;
@@ -57,13 +56,12 @@ body {
 .card-gallery{
   transform: scale(1);
   transition: transform 0.3s ease-out;
-  /* height: 150px !important; */
-  /* width: 300px !important;
-  object-fit: cover !important; */
 }
 .card-gallery:hover {
   transform: scale(1.2);
   z-index: 10;
+  -webkit-box-shadow: 0px 10px 13px -7px #494848, 0px 3px 17px 5px rgba(110, 109, 109, 0.52); 
+box-shadow: 0px 10px 13px -7px #525252, 0px 3px 17px 5px rgba(82, 82, 82, 0.52);
 }
 
 
@@ -200,6 +198,11 @@ body {
   transform: translateY(-3rem);
   padding: 1rem;
   pointer-events: initial;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-box-shadow: 0px 10px 13px -7px #494848, 0px 3px 17px 5px rgba(110, 109, 109, 0.52); 
+  box-shadow: 0px 10px 13px -7px #525252, 0px 3px 17px 5px rgba(82, 82, 82, 0.52);
+  
 }
 
 .card-gallery:hover .infos-content .season, .card-gallery:hover .infos-content p, .card-gallery:hover .infos-content > h6,.card-gallery:hover .infos-content .movie-footer {
