@@ -1,5 +1,6 @@
 import React from "react";
 import Galleries from "./Galleries";
+import netflix_Logo_RGB from '../assets/netflix_Logo_RGB.png' ;
 import { Component } from "react";
 import {
   Container,
@@ -12,16 +13,8 @@ import {
 } from "react-bootstrap";
 
 
+
 class Navbarr extends Component {
-
-
-
-
-
-
-
-
-
 
 
   render() {
@@ -30,7 +23,7 @@ class Navbarr extends Component {
         <Navbar bg="" variant="dark" expand="lg">
           <Container fluid>
             <img
-              src="https://www.edigitalagency.com.au/wp-content/uploads/Netflix-logo-red-black-png.png"
+              src={netflix_Logo_RGB}
               alt=""
               width="150px"
               height="80px"
