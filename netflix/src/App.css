@@ -76,9 +76,7 @@ box-shadow: 0px 10px 13px -7px #525252, 0px 3px 17px 5px rgba(82, 82, 82, 0.52);
   cursor: pointer;
   border: 1px solid white;
   position: relative;
-  /* transform: translateX(-60px); */
   opacity: 0;
-  /* transition: transform 0.3s ease 0.4s, opacity 0.3s ease-out 0.5s; */
 } 
 
  .infos-content .play-btn:hover {
@@ -154,11 +152,6 @@ box-shadow: 0px 10px 13px -7px #525252, 0px 3px 17px 5px rgba(82, 82, 82, 0.52);
   margin: auto;
 }
 
-/* .infos-content p, .infos-content h6, .infos-content .movie-footer {
-  opacity: 0;
-  transform: translateY(-4px);
-} */
-
 .infos-content p.nextflix-title{
   transition: all 1s ease-out 0.15s;
 } 
@@ -169,7 +162,7 @@ box-shadow: 0px 10px 13px -7px #525252, 0px 3px 17px 5px rgba(82, 82, 82, 0.52);
 
 .infos-content > h6 + p {
   display: -webkit-box;
-  width: 100%;
+  /* width: 100%; */
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;  
   overflow: hidden;

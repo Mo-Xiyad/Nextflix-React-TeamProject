@@ -19,9 +19,9 @@ class App extends React.Component {
       <div className="App">
         <Navbarr value={this.state.query} onChange={(e) => this.setState({ query: e.target.value })} />
         <Container fluid className="mb-5 px-5">
-          {this.state.query.length < 3 && <> <Galleries movie="Superman" />
+          {this.state.query.length < 3 && <> <Galleries movie="harry potter" />
             <Galleries movie="Star wars" />
-            <Galleries movie="Money heist" /></>}
+            <Galleries movie="Batman" /></>}
         </Container>
         {this.state.query.length > 3 && <Search query={this.state.query} />}
 
